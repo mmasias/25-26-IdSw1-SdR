@@ -1,38 +1,53 @@
-# Sesiones de requisitado
 
-Este es el repositorio de las sesiones de requisitado de la asignatura de Ingeniería del Software I de UNEATLANTICO.
 
-Se desarrolla, en un caso real, la disciplina de requisitado, que es la puerta de entrada al desarrollo de una solución basada en software. 
-
-<div align=center>
-
-| |Coordinador|Cliente|Estadísticas|
-|-|-|-|:-:|
-1|@Camila-Lesly|Lucía Terán|[👁️](https://github.com/Camila-Lesly/25-26-IdSw1-SdR) / 📒
-2|@31diego|Mar Pacheco|[👁️](https://github.com/31diego/25-26-IdSw1-SdR) / 📒
-3|@martinlopez7|Jorge Crespo|[👁️](https://github.com/martinlopez7/25-26-IdSw1-SdR) / 📒
-4|@Sergiorl2|Jose Breñosa|[👁️](https://github.com/Sergiorl2/25-26-IdSw1-SdR) / 📒
-5|@Alejandrojuarez0105|David García|[👁️](https://github.com/Alejandrojuarez0105/25-26-IdSw1-SdR) / 📒
-6|@enmabry|Jose Breñosa|[👁️](https://github.com/enmabry/25-26-IdSw1-SdR) / 📒
-
+# 💻 Sistema de Gestión de Tareas - Ingeniería de Software I
+<div align="center">
+  <img src="./documents/imagenes/logo.png" alt="logo" width="300" />
 </div>
+<br>
 
-> Se ha demostrado, empírica y académicamente, que un porcentaje no menor de proyectos de software que fracasan lo hacen porque está mal llevada esta fase.
+[![Inicio](https://img.shields.io/badge/Inicio-FFFFFF?style=for-the-badge&logo=homeassistant&logoColor=black)](./README.md)
+[![Modelo de Dominio](https://img.shields.io/badge/Modelo%20de%20Dominio-FFFFFF?style=for-the-badge&logo=bookstack&logoColor=black)](./documents/modelosUML/modeloDeDominio/README.md)
+[![Actores Y CasosDeUso](https://img.shields.io/badge/Actores%20&%20Casos%20De%20Uso-FFFFFF?style=for-the-badge&logo=openstreetmap&logoColor=black)](./documents/actoresYCasosDeUso/README.md)
+[![Diagramas de Contexto](https://img.shields.io/badge/Diagramas%20de%20Contexto-FFFFFF?style=for-the-badge&logo=bookstack&logoColor=black)](./documents/actoresYCasosDeUso/diagramaContexto/README.md)
+[![Detallar & Prototipar](https://img.shields.io/badge/Detallar%20&%20Prototipar-FFFFFF?style=for-the-badge&logo=figma&logoColor=black)](./documents/actoresYCasosDeUso/detalladoYPrototipado/README.md)
 
-<div align=center>
+---
 
-||
-|-|
-![](/images/modelosUML/modelosUML/trabajoRepos.svg)
+## 📝 Descripción Del Proyecto
+Crear una aplicación para la gestión colaborativa de tareas familiares, diseñada para organizar, asignar y coordinar las actividades del hogar entre todos los miembros (padre, madre, hijos, etc.).
+El sistema busca facilitar la planificación diaria, mejorar la distribución de responsabilidades y evitar solapamientos u olvidos.
 
-</div>
+Aunque nace como una herramienta orientada al entorno familiar, el proyecto está pensado para escalar de forma natural a otros contextos, como grupos de compañeros de piso, equipos de trabajo, comunidades pequeñas o cualquier entorno que requiera coordinación compartida de tareas.
 
-## Algunas reglas
+## 🌐 Modelo de Dominio
+A continuación se presenta el **Modelo de Dominio**, base conceptual sobre la cual se construye toda la lógica del proyecto.
+### [Modelo de Dominio](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/develop/documents/modelosUML/modeloDeDominio/README.md)
 
-- Reuniones oficiales (en horas de clase)
-  - A estas debe asistir el 100% de los integrantes de los grupos.
-  - Si a las reuniones asiste menos del 80% del grupo, la reunión se cancela y el grupo se da por cerrado. La evaluación se realiza de la forma tradicional (examen parcial, examen final).
-- Reuniones extra: de acuerdo a lo pautado con el cliente.
-- Se debe utilizar el repo del coordinador del grupo y las herramientas de GitHub para gestionar las reuniones y comunicaciones con el cliente, haciendo un racional uso de la trazabilidad.
-- Las imágenes, en la medida de lo posible en formato plantUML. 
-  - Todas las fuentes en la carpeta modelosUML y las imágenes exportadas, en formato svg.
+## 🎭 Actores Y Casos De Uso
+A continuación se presentan los **actores** y **casos de uso**:
+### [Actores y CasosDeUso](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/develop/documents/actoresYCasosDeUso/README.md)
+### [Diagramas de Contexto](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/develop/documents/actoresYCasosDeUso/diagramaContexto/README.md)
+### [Detallar y Prototipar](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/develop/documents/actoresYCasosDeUso/detalladoYPrototipado/README.md)
+
+
+## ⏰ Reuniones
+En este apartado se puede encontrar los diferentes avances que hemos tenido durante las reuniones con nuestro cliente.
+
+
+### 📅 Reunión 1
+| ENLACES|
+|-----------------------------------------------------------------------------|
+|  [📄Glosario](https://github.com/Sergiorl2/25-26-IdSw1-SdR/blob/main/documents/glosario/primeraReunion/reunion_1.md) |
+|  [📝Notas Tomadas](https://github.com/Sergiorl2/25-26-IdSw1-SdR/blob/main/documents/minutas/primeraReunion/notasTomadas.md) |
+|  [🔗Evidencias](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/main/documents/evidencias/primeraReunion) |
+|  [📂Modelos UML](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/develop/documents/modelosUML/primeraReunion) |
+
+
+### 📅 Reunión 2
+| ENLACES|
+|-----------------------------------------------------------------------------|
+|  [📄Glosario](https://github.com/Sergiorl2/25-26-IdSw1-SdR/blob/develop/documents/glosario/segundaReunion/reunion_2.md) |
+|  [📝Notas Tomadas](https://github.com/Sergiorl2/25-26-IdSw1-SdR/blob/develop/documents/minutas/segundaReunion/notasTomadas.md) |
+|  [🔗Evidencias](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/main/documents/evidencias/segundaReunion) |
+|  [📂Modelos UML](https://github.com/Sergiorl2/25-26-IdSw1-SdR/tree/develop/documents/actoresYCasosDeUso/diagramas) |
