@@ -1,0 +1,55 @@
+@startuml
+title Editar Usuario
+skinparam linetype polyline
+
+state USUARIO_ABIERTO_INICIAL  as "USUARIO_ABIERTO"
+state USUARIO_ABIERTO_COMP     as "USUARIO_ABIERTO"
+state USUARIOS_ABIERTO_FINAL   as "USUARIOS_ABIERTO"
+
+[*] -[#green]-> USUARIO_ABIERTO_INICIAL
+
+USUARIO_ABIERTO_INICIAL -[#green]-> USUARIO_ABIERTO_COMP : editarUsuario()
+note on link
+<b>Administrador</b> se encuentra en USUARIO_ABIERTO
+y solicita editar la información.
+
+<b>Sistema</b> habilita los campos para su modificación
+y mantiene el contexto en USUARIO_ABIERTO.
+end note
+
+state USUARIO_ABIERTO_COMP as "USUARIO_ABIERTO" {
+
+    state ModificacionDatos
+    state DecisionGuardar
+
+    [*] -[#green]-> ModificacionDatos
+    note on link
+    <b>Sistema</b> permite introducir los nuevos datos.
+
+    <b>Administrador</b> modifica la información requerida:
+    • Credenciales, Datos personales, Roles, etc.
+    end note
+
+    ModificacionDatos -[#green]-> DecisionGuardar
+    note on link
+    <b>Sistema</b> muestra los cambios realizados para revisión.
+
+    <b>Administrador</b> solicita finalizar la operación.
+    end note
+
+    DecisionGuardar -[#green]-> [*]
+}
+
+USUARIO_ABIERTO_COMP -[#green]-> USUARIOS_ABIERTO_FINAL : guardarUsuario()
+note on link
+<b>Sistema</b> valida y guarda los cambios
+y muestra nuevamente el listado en USUARIOS_ABIERTO.
+end note
+
+USUARIO_ABIERTO_COMP -[#red]-> USUARIOS_ABIERTO_FINAL : cerrarUsuario()
+note on link
+<b>Sistema</b> descarta las modificaciones realizadas
+y muestra nuevamente el listado en USUARIOS_ABIERTO sin cambios.
+end note
+
+@enduml

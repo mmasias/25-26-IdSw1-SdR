@@ -1,0 +1,40 @@
+@startuml DiagramaDeCasosDeUsoProfesor
+left to right direction
+skinparam packageStyle rectangle
+
+actor Profesor
+
+    package "Listas" {
+        usecase "consultarListaAlumnos()" as ListasConsultarLista
+    }
+
+    package "Alumnos" {
+        usecase "verDetalleAlumno()"  as AlumnosVerDetalle
+    }
+
+    package "Asistencias" {
+        usecase "crearSesionClase()"          as AsistenciasCrearSesion
+        usecase "editarSesionClase()"         as AsistenciasEditarSesion
+        usecase "registrarTomaAsistencia()"   as AsistenciasRegistrarToma
+        usecase "cerrarSesionClase()"         as AsistenciasCerrarSesion
+        usecase "exportarHistorialAsistencias()" as AsistenciasExportarHistorial
+    }
+
+    package "Dispensas" {
+        usecase "consultarSolicitudDispensa()" as DispensasConsultar
+    }
+
+    Profesor --> ListasConsultarLista
+
+    Profesor --> AlumnosVerDetalle
+
+    Profesor --> AsistenciasCrearSesion
+    Profesor --> AsistenciasEditarSesion
+    Profesor --> AsistenciasRegistrarToma
+    Profesor --> AsistenciasCerrarSesion
+    Profesor --> AsistenciasExportarHistorial
+
+    Profesor --> DispensasConsultar
+
+
+@enduml

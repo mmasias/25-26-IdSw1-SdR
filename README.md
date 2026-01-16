@@ -1,38 +1,70 @@
-# Sesiones de requisitado
+<h1 align="center">Centro de Gestión Universitaria</h1>
 
-Este es el repositorio de las sesiones de requisitado de la asignatura de Ingeniería del Software I de UNEATLANTICO.
+<p align="center">
+  <img src="./documents/images/Logo/logoSoftware.png" alt="Logo CGU" width="150">
+</p>
 
-Se desarrolla, en un caso real, la disciplina de requisitado, que es la puerta de entrada al desarrollo de una solución basada en software. 
+<div align="right">
 
-<div align=center>
-
-| |Coordinador|Cliente|Estadísticas|
-|-|-|-|:-:|
-1|@Camila-Lesly|Lucía Terán|[👁️](https://github.com/Camila-Lesly/25-26-IdSw1-SdR) / 📒
-2|@31diego|Mar Pacheco|[👁️](https://github.com/31diego/25-26-IdSw1-SdR) / 📒
-3|@martinlopez7|Jorge Crespo|[👁️](https://github.com/martinlopez7/25-26-IdSw1-SdR) / 📒
-4|@Sergiorl2|Jose Breñosa|[👁️](https://github.com/Sergiorl2/25-26-IdSw1-SdR) / 📒
-5|@Alejandrojuarez0105|David García|[👁️](https://github.com/Alejandrojuarez0105/25-26-IdSw1-SdR) / 📒
-6|@enmabry|Jose Breñosa|[👁️](https://github.com/enmabry/25-26-IdSw1-SdR) / 📒
+| [![](https://img.shields.io/badge/-Inicio-0D47A1?style=flat&logo=Emlakjet&logoColor=white)](/README.md) [![](https://img.shields.io/badge/-Modelo_del_Dominio-0D47A1?style=flat&logo=LiveChat&logoColor=white)](/documents/ModeloDelDominio/) [![](https://img.shields.io/badge/-Actores-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/Actores/) [![](https://img.shields.io/badge/-Casos_de_Uso-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/) [![](https://img.shields.io/badge/-Detallado_Casos_de_Uso-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/DetalladoCasosDeUso/) [![](https://img.shields.io/badge/-Diagrama_de_Contexto-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/DiagramaDeContexto/) [![](https://img.shields.io/badge/-Prototipos-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/Prototipos/) [![](https://img.shields.io/badge/-Reuniones-0D47A1?style=flat&logo=Proton&logoColor=white)](/documents/Reuniones/) [![](https://img.shields.io/badge/-Priorización-0D47A1?style=flat&logo=Proton&logoColor=white)](/documents/CasosDeUso/PriorizaciónCasosDeUso.md) |
+| ---- |
 
 </div>
 
-> Se ha demostrado, empírica y académicamente, que un porcentaje no menor de proyectos de software que fracasan lo hacen porque está mal llevada esta fase.
+## Descripción General
 
-<div align=center>
+El **Centro de Gestión Universitaria (CGU)** es un sistema institucional para la gestión centralizada de procesos académicos: estudiantes, asistencias, dispensas y procedimientos administrativos. Proporciona una plataforma unificada que integra las operaciones de Secretaría, Dirección de Grado y docentes.
 
-||
-|-|
-![](/images/modelosUML/modelosUML/trabajoRepos.svg)
+<table>
+<tr>
+<th>
 
+### Modelo de Dominio
+
+</th>
+<th>
+
+### Disciplina de Requisitos
+
+</th>
+</tr>
+<tr></tr>
+  <tr>
+    <td valign="top">
+      <p>Define las entidades principales y sus relaciones dentro del sistema.</p>
+      <ul>
+        <li><a href="/documents/ModeloDelDominio/DiagramasDeClase/">Diagrama de Clases</a></li>
+        <li><a href="/documents/ModeloDelDominio/DiagramasDeEstado/">Diagrama de Estados</a></li>
+        <li><a href="/documents/ModeloDelDominio/DiagramaDeObjetos/">Diagrama de Objetos</a></li>
+      </ul>
+    </td>
+<td valign="top">
+      <p>Describe actores principales e interacciones del sistema.</p>
+      <ul>
+        <li><a href="/documents/CasosDeUso/Actores/">Actores</a></li>
+        <li><a href="/documents/CasosDeUso/DiagramaDeContexto/">Diagrama de Contexto</a></li>
+        <li><a href="/documents/CasosDeUso/CasoDeUso/">Casos de Uso</a></li>
+        <li><a href="/documents/CasosDeUso/DetalladoCasosDeUso/">Detallado de Casos de Uso</a></li>
+        <li><a href="/documents/CasosDeUso/PriorizaciónCasosDeUso.md">Priorización</a></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Contexto del Problema
+
+- **Listas de alumnos dinámicas:** inscripciones siempre abiertas
+- **Ingreso tardío:** nuevos alumnos no deben acumular faltas previas
+- **Dispensas:** pendientes o aprobadas por dirección
+- **Asignaturas compartidas:** un alumno en múltiples materias
+- **Asistencia eficiente:** registro en múltiples asignaturas
+- **Historial académico:** validación de asignaturas previas
+
+---
+
+<div align="center">
+  <sub>© 2025 — Ingeniería de Software I</sub>
 </div>
 
-## Algunas reglas
-
-- Reuniones oficiales (en horas de clase)
-  - A estas debe asistir el 100% de los integrantes de los grupos.
-  - Si a las reuniones asiste menos del 80% del grupo, la reunión se cancela y el grupo se da por cerrado. La evaluación se realiza de la forma tradicional (examen parcial, examen final).
-- Reuniones extra: de acuerdo a lo pautado con el cliente.
-- Se debe utilizar el repo del coordinador del grupo y las herramientas de GitHub para gestionar las reuniones y comunicaciones con el cliente, haciendo un racional uso de la trazabilidad.
-- Las imágenes, en la medida de lo posible en formato plantUML. 
-  - Todas las fuentes en la carpeta modelosUML y las imágenes exportadas, en formato svg.
