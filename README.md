@@ -1,38 +1,68 @@
-# Sesiones de requisitado
+<h1 align="center">FUNIBER — Plataforma Interna de Investigación</h1>
 
-Este es el repositorio de las sesiones de requisitado de la asignatura de Ingeniería del Software I de UNEATLANTICO.
+<p align="center">
+  <img src="./documentos/imagenes/LogoGIPF.png" alt="Logo GIPF - FUNIBER Platform" width="200">
+</p>
 
-Se desarrolla, en un caso real, la disciplina de requisitado, que es la puerta de entrada al desarrollo de una solución basada en software. 
+<div align="center">
 
-<div align=center>
+[![](https://img.shields.io/badge/-Inicio-0A3B64?style=for-the-badge&logo=github&logoColor=white)](/README.md)
+[![](https://img.shields.io/badge/-Modelo_del_Dominio-0A3B64?style=for-the-badge&logo=drawio&logoColor=white)](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/modeloDelDominio/modeloDominio.md)
+[![](https://img.shields.io/badge/-Actores_y_casos_de_uso-0A3B64?style=for-the-badge&logo=group&logoColor=white)](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/casosDeUso.md)
+[![](https://img.shields.io/badge/-Glosario-0A3B64?style=for-the-badge&logo=notepad&logoColor=white)](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/modeloDelDominio/documentos/vocabulario.md)
 
-| |Coordinador|Cliente|Estadísticas|
-|-|-|-|:-:|
-1|@Camila-Lesly|Lucía Terán|[👁️](https://github.com/Camila-Lesly/25-26-IdSw1-SdR) / 📒
-2|@31diego|Mar Pacheco|[👁️](https://github.com/31diego/25-26-IdSw1-SdR) / 📒
-3|@martinlopez7|Jorge Crespo|[👁️](https://github.com/martinlopez7/25-26-IdSw1-SdR) / 📒
-4|@Sergiorl2|Jose Breñosa|[👁️](https://github.com/Sergiorl2/25-26-IdSw1-SdR) / 📒
-5|@Alejandrojuarez0105|David García|[👁️](https://github.com/Alejandrojuarez0105/25-26-IdSw1-SdR) / 📒
-6|@enmabry|Jose Breñosa|[👁️](https://github.com/enmabry/25-26-IdSw1-SdR) / 📒
-
-</div>
-
-> Se ha demostrado, empírica y académicamente, que un porcentaje no menor de proyectos de software que fracasan lo hacen porque está mal llevada esta fase.
-
-<div align=center>
-
-||
-|-|
-![](/images/modelosUML/modelosUML/trabajoRepos.svg)
+[![](https://img.shields.io/badge/-Detallado_y_Prototipos-0A3B64?style=for-the-badge&logo=notepad&logoColor=white)](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/detalle/detalladoYPrototipos.md)
+[![](https://img.shields.io/badge/-Diagrama_de_Contexto-0A3B64?style=for-the-badge&logo=flowchart&logoColor=white)](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/diagramas/diagramasContexto.md)
+[![](https://img.shields.io/badge/-Reuniones-0A3B64?style=for-the-badge&logo=google-meet&logoColor=white)](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/reuniones/reuniones.md)
+[![](https://img.shields.io/badge/-Priorización-0A3B64?style=for-the-badge&logo=priority&logoColor=white)](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/priorizacionCasosDeUso.md)
+[![](https://img.shields.io/badge/-Rúbrica-0A3B64?style=for-the-badge&logo=checklist&logoColor=white)](https://github.com/mmasias/25-26-IdSw1-SdR/blob/main/documents/l'Rubrica.md)
 
 </div>
 
-## Algunas reglas
+---
 
-- Reuniones oficiales (en horas de clase)
-  - A estas debe asistir el 100% de los integrantes de los grupos.
-  - Si a las reuniones asiste menos del 80% del grupo, la reunión se cancela y el grupo se da por cerrado. La evaluación se realiza de la forma tradicional (examen parcial, examen final).
-- Reuniones extra: de acuerdo a lo pautado con el cliente.
-- Se debe utilizar el repo del coordinador del grupo y las herramientas de GitHub para gestionar las reuniones y comunicaciones con el cliente, haciendo un racional uso de la trazabilidad.
-- Las imágenes, en la medida de lo posible en formato plantUML. 
-  - Todas las fuentes en la carpeta modelosUML y las imágenes exportadas, en formato svg.
+## Descripción General
+La Plataforma Interna de Investigación de FUNIBER es un sistema integral diseñado para coordinar, conectar y optimizar las actividades de investigación dentro de la Fundación Universitaria Iberoamericana. Inspirada en el modelo de LinkedIn, esta herramienta permite a investigadores y docentes administrar sus perfiles, proyectos, convocatorias y compensaciones, mientras que el Departamento de Proyectos mantiene un control centralizado de toda la actividad académica e investigadora.
+
+---
+
+### Modelo del Dominio
+Define las entidades principales y sus relaciones dentro del sistema.
+
+[Ver Modelo del Dominio](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/modeloDelDominio/modeloDominio.md#diagramas-de-clases)
+
+---
+
+### Casos de Uso
+Descripción de las funcionalidades principales del sistema divididas por actor:
+
+- [Actores y Casos de Uso](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/casosDeUso.md) — Roles y agentes que interactúan con el sistema con sus diagramas y descripciones funcionales
+- [Detallado y Prototipos](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/detalle/detalladoYPrototipos.md) — Flujos, escenarios, reglas de negocio e interfaces preliminares
+- [Diagrama de Contexto](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/diagramas/diagramasContexto.md) — Sistema en relación con su entorno  
+- [Priorización](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/casosDeUso/priorizacionCasosDeUso.md) — Orden de implementación recomendado  
+
+---
+
+### Reuniones
+Registro de sesiones de requisitado: decisiones, observaciones y cambios en requerimientos.
+
+[Ver Reuniones](https://github.com/31Diego/25-26-IdSw1-SdR/blob/main/documentos/reuniones/reuniones.md)
+
+---
+
+## Estructura del Análisis
+
+El sistema se organiza en cuatro áreas funcionales clave:
+
+| Área | Descripción |
+|------|-------------|
+| Gestión de Perfiles | Control de información académica, carga laboral y compatibilidad con convocatorias |
+| Gestión de Convocatorias | Detección, registro y asignación de oportunidades de financiación |
+| Gestión de Proyectos | Seguimiento del ciclo de vida: desde la propuesta hasta la finalización |
+| Gestión Financiera | Control de compensaciones, reducciones de carga y registro de gastos |
+
+---
+
+<div align="center">
+  <sub>© 2025 — Ingeniería de Software I · Proyecto FUNIBER — Plataforma GIPF</sub>
+</div>
