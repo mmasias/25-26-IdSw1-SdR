@@ -6,7 +6,7 @@
 
 <div align="right">
 
-| [![](https://img.shields.io/badge/-Inicio-0D47A1?style=flat&logo=Emlakjet&logoColor=white)](/README.md) [![](https://img.shields.io/badge/-Modelo_del_Dominio-0D47A1?style=flat&logo=LiveChat&logoColor=white)](/documents/ModeloDelDominio/) [![](https://img.shields.io/badge/-Actores-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/Actores/) [![](https://img.shields.io/badge/-Casos_de_Uso-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/) [![](https://img.shields.io/badge/-Detallado_Casos_de_Uso-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/DetalladoCasosDeUso/) [![](https://img.shields.io/badge/-Diagrama_de_Contexto-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/DiagramaDeContexto/) [![](https://img.shields.io/badge/-Prototipos-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/Prototipos/) [![](https://img.shields.io/badge/-Reuniones-0D47A1?style=flat&logo=Proton&logoColor=white)](/documents/Reuniones/) [![](https://img.shields.io/badge/-Priorización-0D47A1?style=flat&logo=Proton&logoColor=white)](/documents/CasosDeUso/PriorizaciónCasosDeUso.md) |
+| [![](https://img.shields.io/badge/-Inicio-0D47A1?style=flat&logo=Emlakjet&logoColor=white)](/README.md) [![](https://img.shields.io/badge/-Modelo_del_Dominio-0D47A1?style=flat&logo=LiveChat&logoColor=white)](/documents/ModeloDelDominio/README.MD) [![](https://img.shields.io/badge/-Actores-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/Actores/README.MD) [![](https://img.shields.io/badge/-Casos_de_Uso-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/CasoDeUso/README.md) [![](https://img.shields.io/badge/-Detallado_Casos_de_Uso-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/DetalladoCasosDeUso/README.md) [![](https://img.shields.io/badge/-Diagrama_de_Contexto-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/DiagramaDeContexto/README.MD) [![](https://img.shields.io/badge/-Prototipos-0D47A1?style=flat&logo=openstreetmap&logoColor=white)](/documents/CasosDeUso/Prototipos/README.md) [![](https://img.shields.io/badge/-Reuniones-0D47A1?style=flat&logo=Proton&logoColor=white)](/documents/Reuniones/README.MD) [![](https://img.shields.io/badge/-Priorización-0D47A1?style=flat&logo=Proton&logoColor=white)](/documents/CasosDeUso/PriorizaciónCasosDeUso/PriorizaciónCasosDeUso.md) [![](https://img.shields.io/badge/-Declaración_de_IA-0D47A1?style=flat&logo=robot&logoColor=white)](/documents/DeclaraciónDeIA/Readme.md) |
 | ---- |
 
 </div>
@@ -45,7 +45,8 @@ El **Centro de Gestión Universitaria (CGU)** es un sistema institucional para l
         <li><a href="/documents/CasosDeUso/DiagramaDeContexto/">Diagrama de Contexto</a></li>
         <li><a href="/documents/CasosDeUso/CasoDeUso/">Casos de Uso</a></li>
         <li><a href="/documents/CasosDeUso/DetalladoCasosDeUso/">Detallado de Casos de Uso</a></li>
-        <li><a href="/documents/CasosDeUso/PriorizaciónCasosDeUso.md">Priorización</a></li>
+        <li><a href="/documents/CasosDeUso/Prototipos/">Prototipos</a></li>
+        <li><a href="/documents/CasosDeUso/PriorizaciónCasosDeUso/PriorizaciónCasosDeUso.md">Priorización</a></li>
       </ul>
     </td>
   </tr>

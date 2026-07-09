@@ -1,65 +1,48 @@
 @startuml
-title Editar Solicitud Dispensa
-
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam linetype polyline
+skinparam NoteBackgroundColor lightyellow
+skinparam NoteBorderColor gray
+skinparam StateBackgroundColor #F5F5F5
+skinparam StateBorderColor gray
 
-' Estados inicial y final globales basados en el Diagrama de Contexto
-state startState as "SOLICITUD_DISPENSA_ABIERTA" 
-state endState1 as "DISPENSA_ABIERTO" 
-state endState2 as "SOLICITUD_DISPENSA_ABIERTA" 
-
-startState -[#green]-> editarSolicitudDispensa
-note on link
-    <b>Usuario solicita</b>
-    Editar Solicitud Dispensa
-end note
-
-state editarSolicitudDispensa as "editarSolicitudDispensa()" {
-    state PermitirModificacion as " "
-    state ValidarModificaciones <<choice>>
-
-    ' 1. Inicio: Habilita la edición
-    [*] -[#green]-> PermitirModificacion
+state "editarSolicitudDispensa()" as editarSolicitudDispensa {
+   
+    state " " as Paso1
+    state " " as Paso2
+   
+    [*] -[#green]-> Paso1
     note on link
-        <b>Sistema permite modificar</b>
-        los datos de la solicitud.
+      <b>Secretaría</b> solicita editar solicitud de dispensa
     end note
-
-    ' 2. El usuario realiza las modificaciones
-    PermitirModificacion -[#green]-> ValidarModificaciones
+   
+    Paso1 -[#green]-> Paso2
     note on link
-        <b>Usuario realiza las modificaciones</b>
-        y el sistema valida en tiempo real.
+      <b>Sistema</b> muestra datos de la solicitud a modificar:
+      • Alumno Solicitante y Asignatura
+      • Tipo/Motivo, Día(s) y Franja horaria
+      • Observaciones Internas (Sec.)
     end note
-
-    ' --- FLUJO ALTERNATIVO (Error de validación de datos - Camino Rojo) ---
-    ValidarModificaciones -[#red]-> PermitirModificacion
+   
+    Paso2 -[#green]-> [*]
     note on link
-        <b>Sistema verifica la modificación</b>
-        por tipo de dato .
-        <b>Si hay error:</b>
-        Sistema muestra error y permite corregir.
-    end note
-
-    ' --- 4. FLUJO BÁSICO (Éxito - Verde) ---
-    ValidarModificaciones -[#green]-> [*]
-    note on link
-        <b>Sistema marca los datos</b>
-        listos para ser guardados.
+      <b>Secretaría</b> introduce datos actualizados
+      <b>Sistema</b> permite editar solicitud
+      • Permite solicitar confirmar edición
+      • Permite solicitar cancelar edición
     end note
 }
 
-' --- TRANSICIONES DE SALIDA (Según tu dibujo) ---
+state "DISPENSAS_ABIERTO" as DISPENSAS_ABIERTO
 
-editarSolicitudDispensa -[#green]-> endState1
-note on link
-    <b>Guardar/Cerrar Solicitud()</b>
+editarSolicitudDispensa -[#green]---> DISPENSAS_ABIERTO
+note right on link
+  abrirDispensas()
 end note
 
-editarSolicitudDispensa -[#green]-> endState2
-note on link
-    <b>Mantiene la solicitud abierta</b>
-    (Opción de transición sin acción en el link)
+editarSolicitudDispensa -[#blue]---> DISPENSAS_ABIERTO
+note right on link
+  cancelar edición
 end note
-
 @enduml

@@ -1,0 +1,24 @@
+@startsalt
+{+
+  <b>Portal del Profesor | Consultar Dispensa (Solo Lectura)
+  ==
+  {
+    <b>ID Trámite: | DSP-2026-089
+    <b>Alumno: | Carlos Mendoza
+  }
+  --
+  <b>Información de la Solicitud
+  {
+    Estado de la Dispensa: | <b><color:green>Aprobada por Dirección</color>
+    Tipo/Motivo de dispensa:   | "Solapamiento de horarios"
+    Día(s) de la semana:       | "Miércoles"
+    Franja horaria afectada:   | "10:00 - 12:00    "
+    Asignatura solapada:       | "Arquitectura de Software"
+    Justificación / Comentarios:| "Solapamiento por cambio de grupo en matrícula.    "
+  }
+  --
+  {
+    [   Cerrar Detalles   ]
+  }
+}
+@endsalt

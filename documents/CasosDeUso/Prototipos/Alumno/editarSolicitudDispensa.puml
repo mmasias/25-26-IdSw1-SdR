@@ -1,0 +1,25 @@
+@startsalt
+{+
+  <b>Portal del Alumno | Editar Solicitud de Dispensa
+  ==
+  {
+    <b>ID Trámite: | DSP-2026-089
+    <b>Estado Actual: | <b><color:orange>Solicitada</color>
+  }
+  --
+  <b>Modificar Información de la Dispensa
+  {
+    Asignatura de la dispensa: | ^Ingeniería de Software II^
+    Tipo/Motivo de dispensa:   | ^Solapamiento de horarios^
+    Día(s) de la semana:       | ^Miércoles^
+    Franja horaria afectada:   | "10:00 - 12:00    "
+    Asignatura solapada:       | ^Arquitectura de Software^
+    Justificación / Comentarios:| "Solapamiento debido a cambio de grupo.            "
+    Documento adjunto:         | [ Reemplazar Archivo... ] resguardo_matricula.pdf
+  }
+  --
+  {
+    [ <b>Guardar Cambios</b> ] | [   Descartar Cambios   ]
+  }
+}
+@endsalt

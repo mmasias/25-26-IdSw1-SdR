@@ -1,45 +1,41 @@
 @startuml
-title Exportar Historial Asistencias
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam linetype polyline
+skinparam NoteBackgroundColor lightyellow
+skinparam NoteBorderColor gray
+skinparam StateBackgroundColor #F5F5F5
+skinparam StateBorderColor gray
 
-state ASISTENCIAS_ABIERTO_INICIAL as "ASISTENCIAS_ABIERTO"
-state PROCESO_EXPORTACION_COMP    as "EXPORTANDO_HISTORIAL"
-state ASISTENCIAS_ABIERTO_FINAL   as "ASISTENCIAS_ABIERTO"
+state "exportarHistorialAsistencias()" as exportarHistorialAsistencias {
+    state " " as Paso1
+    state " " as Paso2
 
-[*] -[#green]-> ASISTENCIAS_ABIERTO_INICIAL
-
-ASISTENCIAS_ABIERTO_INICIAL -[#green]-> PROCESO_EXPORTACION_COMP : exportarHistorialAsistencias()
-note on link
-<b>Profesor</b> se encuentra en ASISTENCIAS_ABIERTO
-y solicita descargar el registro de asistencias.
-end note
-
-state PROCESO_EXPORTACION_COMP {
-
-    state SeleccionParametros
-    state GeneracionDocumento
-
-    [*] -[#green]-> SeleccionParametros
+    [*] -[#green]-> Paso1
     note on link
-    <b>Sistema</b> permite seleccionar el formato de salida
-    (Excel, PDF) y el rango de fechas.
-
-    <b>Profesor</b> introduce sus preferencias.
+      <b>Profesor</b> solicita descargar el registro de asistencias
     end note
 
-    SeleccionParametros -[#green]-> GeneracionDocumento
+    Paso1 -[#green]-> Paso2
     note on link
-    <b>Sistema</b> recopila los datos de asistencia
-    y genera el archivo para descarga.
+      <b>Sistema</b> permite configurar los parámetros:
+      • Asignatura y Rango de Fechas
+      • Formato de Archivo (Excel, PDF)
+      <b>Profesor</b> solicita la generación
     end note
 
-    GeneracionDocumento -[#green]-> [*]
+    Paso2 -[#green]-> [*]
+    note on link
+      <b>Sistema</b> procesa los datos y genera el archivo
+      <b>Profesor</b> solicita descargar el archivo
+    end note
 }
 
-PROCESO_EXPORTACION_COMP -[#green]-> ASISTENCIAS_ABIERTO_FINAL
-note on link
-<b>Sistema</b> permite descargar el archivo generado
-y muestra nuevamente el listado en ASISTENCIAS_ABIERTO.
+state "ASISTENCIAS_ABIERTO" as ASISTENCIAS_ABIERTO
+
+exportarHistorialAsistencias -[#blue]---> ASISTENCIAS_ABIERTO
+note right on link
+  abrirAsistencias()
 end note
 
 @enduml

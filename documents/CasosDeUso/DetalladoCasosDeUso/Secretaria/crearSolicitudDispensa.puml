@@ -1,71 +1,49 @@
 @startuml
-title Crear Solicitud de Dispensa 
-
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam linetype polyline
+skinparam NoteBackgroundColor lightyellow
+skinparam NoteBorderColor gray
+skinparam StateBackgroundColor #F5F5F5
+skinparam StateBorderColor gray
 
-state startState as "DISPENSAS_ABIERTO"
-state endState1 as "SOLICITUD_DISPENSA_ABIERTA" 
-state endState2 as "DISPENSAS_ABIERTO" 
-
-startState -[#green]-> crearSolicitudDispensa
-note on link
-    <b>Usuario selecciona</b>
-    Crear Solicitud de Dispensa
-end note
-
-state crearSolicitudDispensa as "crearSolicitudDispensa()" {
-    state SolicitudDatos as " "
-    state ValidarDatos <<choice>>
-    state CreacionExitosa as " "
-
-    ' 1. Inicio: Presenta el formulario
-    [*] -[#green]-> SolicitudDatos
+state "crearSolicitudDispensa()" as crearSolicitudDispensa {
+   
+    state " " as Paso1
+    state " " as Paso2
+   
+    [*] -[#green]-> Paso1
     note on link
-        <b>Sistema presenta formulario</b>
-        para nueva solicitud.
+      <b>Secretaría</b> solicita crear solicitud de dispensa
     end note
-
-    ' 2. Usuario introduce datos y se dispara la validación
-    SolicitudDatos -[#green]-> ValidarDatos
+   
+    Paso1 -[#green]-> Paso2
     note on link
-        <b>Usuario introduce datos</b>
-        * Nombre/ID, Asignatura
-        * Motivo, Documentos, Fechas
+      <b>Sistema</b> permite introducir datos de la solicitud:
+      • Alumno Solicitante y Asignatura de la dispensa
+      • Tipo/Motivo, Día(s) y Franja horaria afectada
+      • Asignatura solapada, Justificación y Documento adjunto
     end note
-
-    ' --- FLUJO ALTERNATIVO (Error de validación - Rojo) ---
-    ValidarDatos -[#red]-> SolicitudDatos
+   
+    Paso2 -[#green]-> [*]
     note on link
-        <b>Sistema valida si el alumno existe</b>
-        y que los datos sean correctos.
-        <b>Si hay error:</b>
-        Sistema informa error y vuelve a solicitar.
-    end note
-
-    ' --- FLUJO BÁSICO (Éxito - Verde) ---
-    ValidarDatos -[#green]-> CreacionExitosa
-    
-    note on link
-        <b>Sistema valida y crea</b>
-        la solicitud.
-    end note
-    
-    CreacionExitosa -[#green]-> [*]
-    note on link
-        <b>Sistema confirma y muestra</b>
-        la nueva solicitud registrada.
+      <b>Secretaría</b> introduce datos de la solicitud
+      <b>Sistema</b> permite crear solicitud
+      • Permite solicitar confirmar creación
+      • Permite solicitar cancelar operación
     end note
 }
 
-' Transiciones de Salida del Caso de Uso
-crearSolicitudDispensa -[#green]-> endState1
-note on link
-    <b>editarSolicitudDispensa()</b>
+state "SOLICITUD_DISPENSA_ABIERTA" as SOLICITUD_DISPENSA_ABIERTA
+state "DISPENSAS_ABIERTO" as DISPENSAS_ABIERTO
+
+crearSolicitudDispensa -[#green]---> SOLICITUD_DISPENSA_ABIERTA
+note right on link
+  editarSolicitudDispensa()
 end note
 
-crearSolicitudDispensa -[#green]-> endState2
-note on link
-    <b>Guardar/Cerrar Solicitud()</b>
+crearSolicitudDispensa -[#blue]---> DISPENSAS_ABIERTO
+note right on link
+  cancelar operación
 end note
-
 @enduml

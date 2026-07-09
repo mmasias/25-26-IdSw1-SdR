@@ -1,0 +1,26 @@
+@startsalt
+{+
+  <b>Portal del Director de Grado | Consultar Dispensa
+  ==
+  {
+    <b>ID Trámite: | DSP-2026-089
+    <b>Estado Actual: | <b><color:orange>Pendiente de Revisión</color>
+  }
+  --
+  <b>Información de la Solicitud
+  {
+    Alumno Solicitante: | "Carlos Mendoza           "
+    Asignatura de la dispensa: | "Ingeniería de Software II"
+    Tipo/Motivo de dispensa:   | "Solapamiento de horarios"
+    Día(s) de la semana:       | "Miércoles"
+    Franja horaria afectada:   | "10:00 - 12:00    "
+    Asignatura solapada:       | "Arquitectura de Software"
+    Justificación / Comentarios:| "Solapamiento con otra asignatura de igual crédito. "
+    Documento adjunto:         | [ Descargar y Ver ] resguardo_matricula.pdf
+  }
+  --
+  {
+    [   Cerrar Detalles   ]
+  }
+}
+@endsalt

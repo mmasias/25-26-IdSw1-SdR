@@ -1,57 +1,50 @@
 @startuml
-title Crear Usuario
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam linetype polyline
+skinparam NoteBackgroundColor lightyellow
+skinparam NoteBorderColor gray
+skinparam StateBackgroundColor #F5F5F5
+skinparam StateBorderColor gray
 
-state USUARIOS_ABIERTO_INICIAL  as "USUARIOS_ABIERTO"
-state USUARIO_ABIERTO_COMP      as "USUARIO_ABIERTO"
-
-[*] -[#green]-> USUARIOS_ABIERTO_INICIAL
-
-USUARIOS_ABIERTO_INICIAL -[#green]-> USUARIO_ABIERTO_COMP : crearUsuario()
-note on link
-<b>Administrador</b> se encuentra en USUARIOS_ABIERTO
-y solicita crear un nuevo usuario.
-
-<b>Sistema</b> muestra un formulario de registro vacío
-y cambia el contexto a USUARIO_ABIERTO.
-end note
-
-state USUARIO_ABIERTO_COMP as "USUARIO_ABIERTO" {
-
-    state IntroduccionDatos
-    state DecisionFinal
-
-    [*] -[#green]-> IntroduccionDatos
+state "crearUsuario()" as crearUsuario {
+   
+    ' Estados anónimos vacíos para simular los pasos
+    state " " as Paso1
+    state " " as Paso2
+   
+    [*] -[#green]-> Paso1
     note on link
-    <b>Sistema</b> permite introducir la información del usuario.
-
-    <b>Administrador</b> introduce los datos requeridos:
-    • Credenciales (Usuario, Contraseña)
-    • Datos personales (Nombre, DNI)
-    • Roles (Profesor, Alumno, etc.)
+      <b>Administrador</b> solicita crear usuario nuevo
     end note
-
-    IntroduccionDatos -[#green]-> DecisionFinal
+   
+    Paso1 -[#green]-> Paso2
     note on link
-    <b>Sistema</b> muestra los datos introducidos para revisión.
-
-    <b>Administrador</b> solicita finalizar la operación
-    (guardar o cancelar).
+      <b>Sistema</b> solicita ingresar datos del usuario
+      • Nombres Completos y Apellidos Completos
+      • DNI / Pasaporte y Correo Electrónico
+      • Rol en el Sistema
     end note
-
-    DecisionFinal -[#green]-> [*]
+   
+    Paso2 -[#green]-> [*]
+    note on link
+      <b>Administrador</b> proporciona datos mínimos
+      <b>Sistema</b> permite crear usuario
+      • Permite solicitar crear usuario
+      • Permite solicitar cancelar creación
+    end note
 }
 
-USUARIO_ABIERTO_COMP -[#green]-> USUARIOS_ABIERTO_INICIAL : guardarUsuario()
-note on link
-<b>Sistema</b> muestra los datos, registra el nuevo usuario
-y muestra nuevamente el listado en USUARIOS_ABIERTO.
+state "USUARIO_ABIERTO" as USUARIO_ABIERTO
+state "USUARIOS_ABIERTO" as USUARIOS_ABIERTO
+
+crearUsuario -[#green]---> USUARIO_ABIERTO
+note right on link
+  editarUsuario()
 end note
 
-USUARIO_ABIERTO_COMP -[#red]-> USUARIOS_ABIERTO_INICIAL : cerrarUsuario()
-note on link
-<b>Sistema</b> descarta los datos introducidos
-y muestra nuevamente el listado en USUARIOS_ABIERTO sin cambios.
+crearUsuario -[#blue]---> USUARIOS_ABIERTO
+note right on link
+  cancelar creación
 end note
-
 @enduml

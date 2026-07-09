@@ -1,45 +1,41 @@
 @startuml
-title Consultar Solicitud Dispensa
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam linetype polyline
+skinparam NoteBackgroundColor lightyellow
+skinparam NoteBorderColor gray
+skinparam StateBackgroundColor #F5F5F5
+skinparam StateBorderColor gray
 
-state DISPENSAS_ABIERTO_INICIAL       as "DISPENSAS_ABIERTO"
-state SOLICITUD_DISPENSA_ABIERTA_COMP as "SOLICITUD_DISPENSA_ABIERTA"
+state "consultarSolicitudDispensa()" as consultarSolicitudDispensa {
+    state " " as Paso1
+    state " " as Paso2
 
-[*] -[#green]-> DISPENSAS_ABIERTO_INICIAL
-
-DISPENSAS_ABIERTO_INICIAL -[#green]-> SOLICITUD_DISPENSA_ABIERTA_COMP : consultarSolicitudDispensa()
-note on link
-<b>Profesor</b> se encuentra en DISPENSAS_ABIERTO
-y solicita ver el detalle de una solicitud específica.
-
-<b>Sistema</b> recupera la información
-y cambia el contexto a SOLICITUD_DISPENSA_ABIERTA.
-end note
-
-state SOLICITUD_DISPENSA_ABIERTA_COMP as "SOLICITUD_DISPENSA_ABIERTA" {
-
-    state VisualizacionDetalle
-    state DecisionGestion
-
-    [*] -[#green]-> VisualizacionDetalle
+    [*] -[#green]-> Paso1
     note on link
-    <b>Sistema</b> muestra todos los datos de la solicitud:
-    • Alumno solicitante y Motivo
-    • Estado actual y Documentación adjunta
+      <b>Profesor</b> solicita consultar el detalle de una solicitud específica
     end note
 
-    VisualizacionDetalle -[#green]-> DecisionGestion
+    Paso1 -[#green]-> Paso2
     note on link
-    <b>Profesor</b> solicita realizar una acción.
+      <b>Sistema</b> permite mostrar todos los datos de la solicitud:
+      • Alumno solicitante y motivo
+      • Estado actual y documentación adjunta
     end note
 
-    DecisionGestion -[#green]-> [*]
+    Paso2 -[#green]-> [*]
+    note on link
+      <b>Profesor</b> revisa la información de la solicitud
+      <b>Sistema</b> permite mantener los datos en pantalla
+      • Permite solicitar cerrar solicitud y volver
+    end note
 }
 
-SOLICITUD_DISPENSA_ABIERTA_COMP -[#red]-> DISPENSAS_ABIERTO_INICIAL : cerrarSolicitud()
-note on link
-<b>Sistema</b> cierra la ficha de la dispensa
-y muestra nuevamente el listado en DISPENSAS_ABIERTO.
+state "DISPENSAS_ABIERTO" as DISPENSAS_ABIERTO
+
+consultarSolicitudDispensa -[#blue]---> DISPENSAS_ABIERTO
+note right on link
+  abrirDispensas()
 end note
 
 @enduml

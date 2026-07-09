@@ -1,60 +1,51 @@
-@startuml ConsultarSolicitudDispensa
-title Consultar solicitud de dispensa
+@startuml
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam linetype polyline
+skinparam NoteBackgroundColor lightyellow
+skinparam NoteBorderColor gray
+skinparam StateBackgroundColor #F5F5F5
+skinparam StateBorderColor gray
 
-state DISPENSAS_ABIERTO_INICIAL          as "DISPENSAS_ABIERTO"
-state SOLICITUD_DISPENSA_ABIERTA_COMP    as "SOLICITUD_DISPENSA_ABIERTA"
+state "consultarSolicitudDispensa()" as consultarSolicitudDispensa {
 
-[*] -[#green]-> DISPENSAS_ABIERTO_INICIAL
+    ' Estados anónimos vacíos para simular los pasos
+    state " " as Paso1
+    state " " as Paso2
 
-' Desde el listado de dispensas, el alumno consulta una existente
-DISPENSAS_ABIERTO_INICIAL -[#green]-> SOLICITUD_DISPENSA_ABIERTA_COMP : consultarSolicitudDispensa()
-note on link
-<b>Alumno</b> se encuentra en DISPENSAS_ABIERTO
-(listado de sus solicitudes) y selecciona una solicitud para consultar.
-
-<b>Sistema</b> muestra su estado actual
-(aprobada / rechazada / pendiente) y comentarios,
-y abre la solicitud en detalle (SOLICITUD_DISPENSA_ABIERTA).
-end note
-
-' Comportamiento interno de la solicitud abierta
-state SOLICITUD_DISPENSA_ABIERTA_COMP as "SOLICITUD_DISPENSA_ABIERTA" {
-
-    state ConsultarEditarSolicitud
-    state DecidirAccion
-
-    [*] -[#green]-> ConsultarEditarSolicitud
+    [*] -[#green]-> Paso1
     note on link
-    <b>Sistema</b> muestra todos los datos de la solicitud seleccionada:
-    • Estado (aprobada, rechazada, pendiente)
-    • Comentarios del Director / Secretaría
-    • Datos de asignatura, motivo, documentación, etc.
-
-    <b>Alumno</b> puede simplemente consultar la información
-    o modificar los datos permitidos (editarSolicitudDispensa()).
+      <b>Alumno</b> solicita seleccionar una solicitud
     end note
 
-    ConsultarEditarSolicitud -[#green]-> DecidirAccion
+    Paso1 -[#green]-> Paso2
     note on link
-    Al finalizar, el Alumno decide:
-    • guardarSolicitudDispensa(), o
-    • cerrarSolicitudDispensa() (salir descartando cambios).
+      <b>Sistema</b> permite abrir el detalle y mostrar:
+      • Estado de la Dispensa, Asignatura y Motivo
+      • Día, Franja horaria y Asignatura solapada
+      • Justificación / Comentarios
     end note
 
-    DecidirAccion -[#green]-> [*]
+    Paso2 -[#green]-> [*]
+    note on link
+      <b>Alumno</b> revisa la información de la solicitud
+      <b>Sistema</b> permite mantener los datos en pantalla
+      • Permite solicitar editar la solicitud
+      • Permite solicitar cancelar y volver al listado
+    end note
 }
 
-' Vuelta al listado según la acción elegida
-SOLICITUD_DISPENSA_ABIERTA_COMP -[#green]-> DISPENSAS_ABIERTO_INICIAL : guardarSolicitudDispensa()
-note on link
-<b>Sistema</b> guarda los cambios de la solicitud
-y vuelve a DISPENSAS_ABIERTO (listado actualizado).
+state "SOLICITUD_DISPENSA_ABIERTA" as SOLICITUD_DISPENSA_ABIERTA
+state "DISPENSAS_ABIERTO" as DISPENSAS_ABIERTO
+
+consultarSolicitudDispensa -[#green]---> SOLICITUD_DISPENSA_ABIERTA
+note right on link
+  editarSolicitudDispensa()
 end note
 
-SOLICITUD_DISPENSA_ABIERTA_COMP -[#red]-> DISPENSAS_ABIERTO_INICIAL : cerrarSolicitudDispensa()
-note on link
-<b>Sistema</b> descarta los cambios realizados
-y vuelve a DISPENSAS_ABIERTO manteniendo la solicitud como estaba.
+consultarSolicitudDispensa -[#blue]---> DISPENSAS_ABIERTO
+note right on link
+  abrirDispensas()
 end note
+
 @enduml

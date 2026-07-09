@@ -1,0 +1,24 @@
+@startsalt
+{+
+  <b>Portal de la Secretaría | Editar Solicitud de Dispensa
+  ==
+  {
+    <b>ID Trámite: | DSP-2026-089
+    <b>Estado Actual: | <b><color:green>Aprobada por Dirección</color>
+  }
+  --
+  <b>Modificar Datos Administrativos
+  {
+    Alumno Solicitante: | "Carlos Mendoza           "
+    Asignatura de la dispensa: | ^Ingeniería de Software II^
+    Tipo/Motivo de dispensa:   | ^Solapamiento de horarios^
+    Día(s) de la semana:       | ^Miércoles^
+    Franja horaria afectada:   | "10:00 - 12:00    "
+    Observaciones Internas (Sec.): | "Documentación original archivada en expediente."
+  }
+  --
+  {
+    [ <b>Guardar Cambios Administrativos</b> ] | [   Descartar Cambios   ]
+  }
+}
+@endsalt

@@ -1,55 +1,50 @@
 @startuml
-title Editar Usuario
+skinparam nodesep 60
+skinparam ranksep 60
 skinparam linetype polyline
+skinparam NoteBackgroundColor lightyellow
+skinparam NoteBorderColor gray
+skinparam StateBackgroundColor #F5F5F5
+skinparam StateBorderColor gray
 
-state USUARIO_ABIERTO_INICIAL  as "USUARIO_ABIERTO"
-state USUARIO_ABIERTO_COMP     as "USUARIO_ABIERTO"
-state USUARIOS_ABIERTO_FINAL   as "USUARIOS_ABIERTO"
-
-[*] -[#green]-> USUARIO_ABIERTO_INICIAL
-
-USUARIO_ABIERTO_INICIAL -[#green]-> USUARIO_ABIERTO_COMP : editarUsuario()
-note on link
-<b>Administrador</b> se encuentra en USUARIO_ABIERTO
-y solicita editar la información.
-
-<b>Sistema</b> habilita los campos para su modificación
-y mantiene el contexto en USUARIO_ABIERTO.
-end note
-
-state USUARIO_ABIERTO_COMP as "USUARIO_ABIERTO" {
-
-    state ModificacionDatos
-    state DecisionGuardar
-
-    [*] -[#green]-> ModificacionDatos
+state "editarUsuario()" as editarUsuario {
+   
+    ' Estados anónimos vacíos para simular los pasos
+    state " " as Paso1
+    state " " as Paso2
+   
+    [*] -[#green]-> Paso1
     note on link
-    <b>Sistema</b> permite introducir los nuevos datos.
-
-    <b>Administrador</b> modifica la información requerida:
-    • Credenciales, Datos personales, Roles, etc.
+      <b>Administrador</b> solicita editar usuario
     end note
-
-    ModificacionDatos -[#green]-> DecisionGuardar
+   
+    Paso1 -[#green]-> Paso2
     note on link
-    <b>Sistema</b> muestra los cambios realizados para revisión.
-
-    <b>Administrador</b> solicita finalizar la operación.
+      <b>Sistema</b> solicita ingresar datos a modificar
+      • Nombres Completos y Apellidos Completos
+      • Correo Electrónico
+      • Rol en el Sistema y Estado
     end note
-
-    DecisionGuardar -[#green]-> [*]
+   
+    Paso2 -[#green]-> [*]
+    note on link
+      <b>Administrador</b> proporciona datos actualizados
+      <b>Sistema</b> permite editar usuario
+      • Permite solicitar guardar cambios
+      • Permite solicitar cerrar usuario
+    end note
 }
 
-USUARIO_ABIERTO_COMP -[#green]-> USUARIOS_ABIERTO_FINAL : guardarUsuario()
-note on link
-<b>Sistema</b> valida y guarda los cambios
-y muestra nuevamente el listado en USUARIOS_ABIERTO.
+
+state "USUARIOS_ABIERTO" as USUARIOS_ABIERTO
+
+editarUsuario -[#green]---> USUARIOS_ABIERTO
+note right on link
+  abrirUsuarios()
 end note
 
-USUARIO_ABIERTO_COMP -[#red]-> USUARIOS_ABIERTO_FINAL : cerrarUsuario()
-note on link
-<b>Sistema</b> descarta las modificaciones realizadas
-y muestra nuevamente el listado en USUARIOS_ABIERTO sin cambios.
+editarUsuario -[#blue]---> USUARIOS_ABIERTO
+note right on link
+  cancelar edición
 end note
-
 @enduml
